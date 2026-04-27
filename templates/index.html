@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sayed Murtaza — Portfolio</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <div class="logo-wrap">
+        <span class="logo">Sayed Murtaza</span>
+        <span class="greeting" id="greeting"></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <p class="hero-tag">Hello, I'm</p>
+      <h1><span id="typed-name" style="color: white;"></span><span class="cursor">|</span></h1>
+      <p class="hero-sub">Self-taught Full-Stack Developer with a background in business — currently building real-world
+        applications while working full-time. My journey into tech started with a clear goal: transition into software
+        development through consistent learning and hands-on projects.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary">View my work</a>
+        <a href="#contact" class="btn btn-outline">Contact me</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-sub">Things I've built</p>
+      <div class="projects-grid" id="projects-grid">
+        <p class="loading">Loading projects...</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-dark" id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <p class="section-sub">Technologies I work with</p>
+      <div class="skills-grid" id="skills-grid">
+        <p class="loading">Loading skills...</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container contact-wrap">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-sub">Let's work together</p>
+      <form class="contact-form" id="contact-form">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+        <textarea name="message" placeholder="Your message" rows="5" required></textarea>
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <p class="form-msg" id="form-msg"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Built with HTML, CSS, JS & Django &mdash; &copy; <span id="year"></span> Sayed Murtaza</p>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/main.js' %}"></script>
+  <canvas id="particles-canvas"></canvas>
+</body>
+
+</html>
