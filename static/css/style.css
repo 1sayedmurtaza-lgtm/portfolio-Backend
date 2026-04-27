@@ -407,3 +407,9 @@ footer {
     font-weight: 400;
     letter-spacing: 0.03em;
 }
+
+.logo-inline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
