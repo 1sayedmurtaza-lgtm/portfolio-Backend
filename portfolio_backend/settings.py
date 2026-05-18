@@ -5,9 +5,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-change-this-in-production'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://www.nematy.com',
+    'https://nematy.com',
+    'https://portfolio-backend-production.up.railway.app',  # replace with your real Railway URL
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -24,7 +30,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # must be here, 3rd position
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -72,18 +78,14 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-
-
-STATICFILES_DIRS = [
-    BASE_DIR / 'portfolio' / 'static',
-]
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:5500",
     "http://localhost:5500",
+    "https://www.nematy.com",
+    "https://nematy.com",
 ]
 
 REST_FRAMEWORK = {
